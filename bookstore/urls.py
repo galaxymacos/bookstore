@@ -20,4 +20,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),     # Use Djagno log in/out, and sign up
     path("", include("pages.urls")),
+    path("accounts/", include("accounts.urls"))
 ]
