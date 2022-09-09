@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
     # Third party
     "crispy_forms",
     "crispy_bootstrap5",
@@ -53,11 +54,12 @@ AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 )
-
+# django-allauth config
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 LOGIN_REDIRECT_URL = "home"
 ACCOUNT_LOGOUT_REDIRECT = "home"
 ACCOUNT_SESSION_REMEMBER = True  # Remember the username and password when logging in
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 
 AUTH_USER_MODEL = "accounts.CustomUser"  # Use custom user model
 
