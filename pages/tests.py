@@ -7,7 +7,7 @@ from pages.views import HomePageView, AboutPageView
 # Create your tests here.
 class HomePageTests(SimpleTestCase):
     def setUp(self) -> None:
-        url = reverse("pages:home")
+        url = reverse("home")
         self.response = self.client.get(url)
 
     def test_url_exists_at_correct_location(self):
@@ -32,7 +32,7 @@ class HomePageTests(SimpleTestCase):
 
 class AboutPageTests(SimpleTestCase):
     def setUp(self) -> None:
-        url = reverse("pages:about")
+        url = reverse("about")
         self.response = self.client.get(url)
 
     def test_aboutpage_status_code(self):

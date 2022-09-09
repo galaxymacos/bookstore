@@ -36,7 +36,7 @@ class CustomUserTests(TestCase):
 
 class SignUpPageTest(TestCase):
     def setUp(self) -> None:
-        url = reverse("accounts:signup")
+        url = reverse("account_signup")
         self.response = self.client.get(url)
 
     def test_signup_template(self):
