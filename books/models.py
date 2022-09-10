@@ -2,7 +2,7 @@ import uuid
 
 from django.contrib.auth import get_user_model
 from django.db import models
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 
 # Create your models here.
@@ -22,7 +22,7 @@ class Book(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("book_detail", args=[str(self.id)])
+        return reverse_lazy("book_detail", args=[str(self.id)])
 
 
 class Review(models.Model):
