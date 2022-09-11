@@ -75,6 +75,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 AUTH_USER_MODEL = "accounts.CustomUser"  # Use custom user model
 
 MIDDLEWARE = [
+    "django.middleware.cache.UpdateCacheMiddleware",    # Caching
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -83,7 +84,12 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "django.middleware.cache.FetchFromCacheMiddleware",
 ]
+
+CACHE_MIDDLEWARE_ALIAS = "default"
+CACHE_MIDDLEWARE_SECONDS = 604800   # Good for site that does not change often
+CACHE_MIDDLEWARE_KEY_PREFIX = ""
 
 ROOT_URLCONF = "bookstore.urls"
 
